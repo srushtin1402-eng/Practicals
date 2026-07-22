@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Srushti Nigade | Practical Archive</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#0b1120,#2e1065,#4c1d95,#111827);
+background-size:400% 400%;
+animation:bg 15s ease infinite;
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:40px;
+
+color:white;
+
+}
+
+@keyframes bg{
+
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+
+}
+
+.container{
+
+width:900px;
+max-width:100%;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(25px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:28px;
+
+padding:45px;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.45),
+0 0 40px rgba(168,85,247,.18);
+
+}
+
+h1{
+
+font-size:45px;
+
+text-align:center;
+
+background:linear-gradient(to right,#ffffff,#d8b4fe,#818cf8);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+margin-bottom:10px;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+color:#d1d5db;
+
+margin-bottom:35px;
+
+font-size:18px;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:1fr;
+
+gap:22px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.08);
+
+padding:30px;
+
+border-radius:20px;
+
+transition:.35s;
+
+text-align:center;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px) scale(1.02);
+
+background:rgba(255,255,255,.12);
+
+box-shadow:0 0 25px rgba(168,85,247,.35);
+
+}
+
+.card h2{
+
+margin-bottom:15px;
+
+font-size:26px;
+
+}
+
+.card p{
+
+color:#d1d5db;
+
+margin-bottom:25px;
+
+line-height:1.6;
+
+}
+
+.button{
+
+display:inline-block;
+
+padding:15px 35px;
+
+background:linear-gradient(135deg,#8b5cf6,#6366f1);
+
+color:white;
+
+text-decoration:none;
+
+border-radius:14px;
+
+font-weight:bold;
+
+font-size:17px;
+
+transition:.3s;
+
+}
+
+.button:hover{
+
+transform:scale(1.05);
+
+background:linear-gradient(135deg,#a855f7,#7c3aed);
+
+box-shadow:0 0 20px rgba(168,85,247,.45);
+
+}
+
+.footer{
+
+margin-top:40px;
+
+text-align:center;
+
+color:#b8b8c5;
+
+font-size:15px;
+
+letter-spacing:1px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>💻 Practical Archive</h1>
+
+<p class="subtitle">
+Academic Resource Portal • Srushti Nigade
+</p>
+
+<div class="grid">
+
+<div class="card">
+
+<h2>📄 Computer Practical Journal</h2>
+
+<p>
+Open the latest practical PDF for reference and study.
+</p>
+
+<a class="button" href="Computer_Practical.pdf">
+📖 Open Practical PDF
+</a>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+© 2026 • Academic Resource Portal • Srushti Nigade
+
+</div>
+
+</div>
+
+</body>
+
+</html>

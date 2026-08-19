@@ -519,24 +519,33 @@ async function loadFiles(){
         won't appear.
         */
 
-        const usefulFiles =
-        files.filter(file => {
+       const usefulFiles =
+files.filter(file => {
 
-            const name =
-            file.name.toLowerCase();
+    const name =
+    file.name.toLowerCase();
 
+    return (
 
-            return (
+        (
+            name.endsWith(".pdf") ||
 
-                name.endsWith(".pdf") ||
+            name.endsWith(".html") ||
 
-                name.endsWith(".html") ||
+            name.endsWith(".htm")
+        )
 
-                name.endsWith(".htm")
+        &&
 
-            );
+        name !== "index.html"
 
-        });
+        &&
+
+        name !== "practicals.html"
+
+    );
+
+});
 
 
         /* =================================

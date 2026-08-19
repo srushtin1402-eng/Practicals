@@ -19,7 +19,14 @@ font-family:'Segoe UI',sans-serif;
 
 body{
 
-background:linear-gradient(135deg,#0b1120,#2e1065,#4c1d95,#111827);
+background:linear-gradient(
+135deg,
+#0b1120,
+#2e1065,
+#4c1d95,
+#111827
+);
+
 background-size:400% 400%;
 animation:bg 15s ease infinite;
 
@@ -37,9 +44,17 @@ color:white;
 
 @keyframes bg{
 
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
 
 }
 
@@ -70,7 +85,13 @@ font-size:45px;
 
 text-align:center;
 
-background:linear-gradient(to right,#ffffff,#d8b4fe,#818cf8);
+background:
+linear-gradient(
+to right,
+#ffffff,
+#d8b4fe,
+#818cf8
+);
 
 -webkit-background-clip:text;
 
@@ -120,11 +141,23 @@ text-align:center;
 
 .card:hover{
 
-transform:translateY(-8px) scale(1.02);
+transform:
+translateY(-8px)
+scale(1.02);
 
-background:rgba(255,255,255,.12);
+background:
+rgba(255,255,255,.12);
 
-box-shadow:0 0 25px rgba(168,85,247,.35);
+box-shadow:
+0 0 25px rgba(168,85,247,.35);
+
+}
+
+.card-icon{
+
+font-size:48px;
+
+margin-bottom:12px;
 
 }
 
@@ -152,7 +185,12 @@ display:inline-block;
 
 padding:15px 35px;
 
-background:linear-gradient(135deg,#8b5cf6,#6366f1);
+background:
+linear-gradient(
+135deg,
+#8b5cf6,
+#6366f1
+);
 
 color:white;
 
@@ -172,9 +210,15 @@ transition:.3s;
 
 transform:scale(1.05);
 
-background:linear-gradient(135deg,#a855f7,#7c3aed);
+background:
+linear-gradient(
+135deg,
+#a855f7,
+#7c3aed
+);
 
-box-shadow:0 0 20px rgba(168,85,247,.45);
+box-shadow:
+0 0 20px rgba(168,85,247,.45);
 
 }
 
@@ -192,6 +236,22 @@ letter-spacing:1px;
 
 }
 
+@media(max-width:600px){
+
+body{
+padding:20px;
+}
+
+.container{
+padding:30px 20px;
+}
+
+h1{
+font-size:34px;
+}
+
+}
+
 </style>
 
 </head>
@@ -200,7 +260,9 @@ letter-spacing:1px;
 
 <div class="container">
 
-<h1>💻 Practical Archive</h1>
+<h1>
+💻 Practical Archive
+</h1>
 
 <p class="subtitle">
 Academic Resource Portal • Srushti Nigade
@@ -210,14 +272,24 @@ Academic Resource Portal • Srushti Nigade
 
 <div class="card">
 
-<h2>📄 Computer Practical Journal</h2>
+<div class="card-icon">
+📚
+</div>
+
+<h2>
+Computer Practicals
+</h2>
 
 <p>
-Open the latest practical PDF for reference and study.
+Access all available practical journals,
+PDFs and web resources in one place.
 </p>
 
-<a class="button" href="Computer_Practical.pdf">
-📖 Open Practical PDF
+<a
+class="button"
+href="practicals.html"
+>
+📖 Open Practicals
 </a>
 
 </div>

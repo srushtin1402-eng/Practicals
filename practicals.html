@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Computer Practicals | Srushti Nigade</title>
+
+<style>
+
+/* =========================
+   BASIC RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body{
+
+    background:
+    linear-gradient(
+        135deg,
+        #0b1120,
+        #2e1065,
+        #4c1d95,
+        #111827
+    );
+
+    background-size:400% 400%;
+
+    animation:bg 15s ease infinite;
+
+    min-height:100vh;
+
+    padding:40px;
+
+    color:white;
+
+}
+
+
+@keyframes bg{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container{
+
+    width:1050px;
+
+    max-width:100%;
+
+    margin:auto;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:28px;
+
+    padding:45px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.45),
+    0 0 40px rgba(168,85,247,.18);
+
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back{
+
+    display:inline-block;
+
+    color:#d8b4fe;
+
+    text-decoration:none;
+
+    margin-bottom:25px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+.back:hover{
+
+    color:white;
+
+    transform:translateX(-5px);
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+h1{
+
+    font-size:42px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        to right,
+        #ffffff,
+        #d8b4fe,
+        #818cf8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    margin-bottom:10px;
+
+}
+
+
+.subtitle{
+
+    text-align:center;
+
+    color:#d1d5db;
+
+    margin-bottom:35px;
+
+    font-size:17px;
+
+}
+
+
+/* =========================
+   FILE GRID
+========================= */
+
+#fileList{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(280px,1fr)
+    );
+
+    gap:20px;
+
+}
+
+
+/* =========================
+   FILE CARD
+========================= */
+
+.file-card{
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    padding:25px;
+
+    border-radius:18px;
+
+    transition:.35s;
+
+}
+
+
+.file-card:hover{
+
+    transform:
+    translateY(-7px)
+    scale(1.02);
+
+    background:
+    rgba(255,255,255,.13);
+
+    box-shadow:
+    0 0 25px rgba(168,85,247,.35);
+
+}
+
+
+/* =========================
+   FILE ICON
+========================= */
+
+.file-icon{
+
+    font-size:42px;
+
+    margin-bottom:12px;
+
+}
+
+
+/* =========================
+   FILE NAME
+========================= */
+
+.file-name{
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+
+    word-break:break-word;
+
+}
+
+
+/* =========================
+   FILE TYPE
+========================= */
+
+.file-type{
+
+    color:#bdb5d6;
+
+    font-size:14px;
+
+    margin-bottom:18px;
+
+}
+
+
+/* =========================
+   OPEN BUTTON
+========================= */
+
+.open-button{
+
+    display:block;
+
+    text-align:center;
+
+    padding:12px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #8b5cf6,
+        #6366f1
+    );
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:11px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+.open-button:hover{
+
+    background:
+    linear-gradient(
+        135deg,
+        #a855f7,
+        #7c3aed
+    );
+
+    transform:scale(1.03);
+
+    box-shadow:
+    0 0 18px rgba(168,85,247,.4);
+
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading{
+
+    grid-column:1/-1;
+
+    text-align:center;
+
+    color:#d1d5db;
+
+    font-size:18px;
+
+    padding:40px;
+
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.error{
+
+    grid-column:1/-1;
+
+    text-align:center;
+
+    color:#fca5a5;
+
+    padding:30px;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+    margin-top:40px;
+
+    text-align:center;
+
+    color:#b8b8c5;
+
+    font-size:14px;
+
+    letter-spacing:1px;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    body{
+        padding:20px;
+    }
+
+    .container{
+        padding:28px 20px;
+    }
+
+    h1{
+        font-size:34px;
+    }
+
+    #fileList{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- BACK BUTTON -->
+
+    <a
+        class="back"
+        href="index.html"
+    >
+        ← Back to Home
+    </a>
+
+
+    <!-- HEADER -->
+
+    <h1>
+        📚 Computer Practicals
+    </h1>
+
+
+    <p class="subtitle">
+        All available practical resources • Srushti Nigade
+    </p>
+
+
+    <!-- FILES WILL APPEAR HERE -->
+
+    <div id="fileList">
+
+        <div class="loading">
+
+            ✨ Loading your practicals...
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        © 2026 • Academic Resource Portal • Srushti Nigade
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+/* =========================================
+   YOUR GITHUB DETAILS
+========================================= */
+
+const username = "srushtin1402-eng";
+
+const repository = "Practicals";
+
+const branch = "main";
+
+
+/* =========================================
+   GITHUB API
+========================================= */
+
+const githubAPI =
+`https://api.github.com/repos/${username}/${repository}/contents/?ref=${branch}`;
+
+
+/* =========================================
+   GITHUB PAGES WEBSITE ADDRESS
+========================================= */
+
+const pagesURL =
+`https://${username}.github.io/${repository}/`;
+
+
+/* =========================================
+   LOAD FILES
+========================================= */
+
+async function loadFiles(){
+
+    const fileList =
+    document.getElementById("fileList");
+
+
+    try{
+
+        /* Ask GitHub for repository files */
+
+        const response =
+        await fetch(githubAPI);
+
+
+        if(!response.ok){
+
+            throw new Error(
+                "Unable to access repository."
+            );
+
+        }
+
+
+        const files =
+        await response.json();
+
+
+        /*
+        Only show PDFs and HTML files.
+
+        README, .gitattributes etc.
+        won't appear.
+        */
+
+        const usefulFiles =
+        files.filter(file => {
+
+            const name =
+            file.name.toLowerCase();
+
+
+            return (
+
+                name.endsWith(".pdf") ||
+
+                name.endsWith(".html") ||
+
+                name.endsWith(".htm")
+
+            );
+
+        });
+
+
+        /* =================================
+           NO FILES
+        ================================= */
+
+        if(usefulFiles.length === 0){
+
+            fileList.innerHTML = `
+
+                <div class="loading">
+
+                    📂 No practical files found yet.
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        /* Clear loading message */
+
+        fileList.innerHTML = "";
+
+
+        /* =================================
+           CREATE CARD FOR EACH FILE
+        ================================= */
+
+        usefulFiles.forEach(file => {
+
+
+            const card =
+            document.createElement("div");
+
+
+            card.className =
+            "file-card";
+
+
+            /* Default */
+
+            let icon = "📄";
+
+            let type = "Resource";
+
+
+            /* PDF */
+
+            if(
+                file.name
+                .toLowerCase()
+                .endsWith(".pdf")
+            ){
+
+                icon = "📕";
+
+                type = "PDF Document";
+
+            }
+
+
+            /* HTML */
+
+            else if(
+
+                file.name
+                .toLowerCase()
+                .endsWith(".html")
+
+                ||
+
+                file.name
+                .toLowerCase()
+                .endsWith(".htm")
+
+            ){
+
+                icon = "🌐";
+
+                type = "Web Page";
+
+            }
+
+
+            /*
+            Encode filename so spaces
+            and special characters work.
+            */
+
+            const encodedName =
+            encodeURIComponent(file.name);
+
+
+            /*
+            Create the actual GitHub Pages
+            URL for the resource.
+            */
+
+            const fileURL =
+            pagesURL + encodedName;
+
+
+            /* =================================
+               CARD HTML
+            ================================= */
+
+            card.innerHTML = `
+
+                <div class="file-icon">
+
+                    ${icon}
+
+                </div>
+
+
+                <div class="file-name">
+
+                    ${file.name}
+
+                </div>
+
+
+                <div class="file-type">
+
+                    ${type}
+
+                </div>
+
+
+                <a
+                    class="open-button"
+                    href="${fileURL}"
+                    target="_blank"
+                    rel="noopener"
+                >
+
+                    Open Resource ↗
+
+                </a>
+
+            `;
+
+
+            /* Add card to page */
+
+            fileList.appendChild(card);
+
+        });
+
+
+    }
+
+
+    catch(error){
+
+        console.error(error);
+
+
+        fileList.innerHTML = `
+
+            <div class="error">
+
+                ❌ Couldn't load the practical files.
+
+                <br><br>
+
+                Please refresh the page and try again.
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* START */
+
+loadFiles();
+
+</script>
+
+
+</body>
+
+</html>
